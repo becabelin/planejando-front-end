@@ -1,11 +1,12 @@
 import React from "react";
-import { Container, Title } from "../../assets/styles.js";
+import { Container, Title, SubTitle } from "../Header/styles";
 import groups from "../../assets/groups.png";
 
 export function Header() {
   return (
     <Container>
-      <Title>Time FIAP</Title>
+      <SubTitle>Time FIAP</SubTitle>
+      <Title>Adicionar</Title>
       <img src={groups} alt="groups" />
     </Container>
   );

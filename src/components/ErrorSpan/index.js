@@ -1,6 +1,6 @@
 import React from "react";
-import { Span } from "./styles";
+import {Span} from './styles'
 
-export function ErrorSpan({ children }) {
-  return <Span>{children}</Span>;
+export function ErrorSpan({children}) {
+    return <Span>{children}</Span>
 }
