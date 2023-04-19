@@ -13,7 +13,7 @@ export const Form = styled.form`
   flex-direction: column;
   width: 80%;
   border: 2px solid ${Colors.ORANGE};
-  padding: ${Spaces.TWO} ;
+  padding: ${Spaces.TWO};
   align-items: center;
   border-radius: 22px;
 `;

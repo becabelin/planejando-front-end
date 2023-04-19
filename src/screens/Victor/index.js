@@ -1,12 +1,11 @@
 import { useFormik } from "formik";
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { Input } from "../../components/Input";
 import { Header } from "../../components/Header";
 import { Container, Form } from "./styles";
-import {getCep} from "../../services/cep";
+import { getCep } from "../../services/cep";
 
 export function Victor() {
-  
   const formik = useFormik({
     initialValues: {
       nome: "Victor Juaci Aquino de Medeiros",
@@ -16,30 +15,31 @@ export function Victor() {
       numero: "555",
       cidade: "",
       bairro: "",
-      formacoes: "Engenharia de Produção - Universidade Federal do Rio Grande do Norte",
+      formacoes:
+        "Engenharia de Produção - Universidade Federal do Rio Grande do Norte",
       experiencias: "Ferreri - Backend Engineer",
       hobbies: "Assistir séries",
     },
   });
 
   async function handleCep() {
-    if(formik.values.cep) {
+    if (formik.values.cep) {
       const response = await getCep(formik.values.cep);
-      formik.setFieldValue('logradouro', response.data.logradouro);
-      formik.setFieldValue('cidade', response.data.localidade);
-      formik.setFieldValue('bairro', response.data.bairro);
+      formik.setFieldValue("logradouro", response.data.logradouro);
+      formik.setFieldValue("cidade", response.data.localidade);
+      formik.setFieldValue("bairro", response.data.bairro);
     } else {
-      alert("Preencha o CEP")
+      alert("Preencha o CEP");
     }
   }
 
   useEffect(() => {
-      handleCep();
+    handleCep();
   }, []);
 
   return (
     <>
-      <Header/>
+      <Header />
       <Container>
         <Form>
           <Input

@@ -1,12 +1,11 @@
 import { useFormik } from "formik";
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { Input } from "../../components/Input";
 import { Header } from "../../components/Header";
 import { Container, Form } from "./styles";
-import {getCep} from "../../services/cep";
+import { getCep } from "../../services/cep";
 
 export function Vinicius() {
-  
   const formik = useFormik({
     initialValues: {
       nome: "Vinicius Gabriel bernardes dos Santos",
@@ -23,23 +22,23 @@ export function Vinicius() {
   });
 
   async function handleCep() {
-    if(formik.values.cep) {
+    if (formik.values.cep) {
       const response = await getCep(formik.values.cep);
-      formik.setFieldValue('logradouro', response.data.logradouro);
-      formik.setFieldValue('cidade', response.data.localidade);
-      formik.setFieldValue('bairro', response.data.bairro);
+      formik.setFieldValue("logradouro", response.data.logradouro);
+      formik.setFieldValue("cidade", response.data.localidade);
+      formik.setFieldValue("bairro", response.data.bairro);
     } else {
-      alert("Preencha o CEP")
+      alert("Preencha o CEP");
     }
   }
 
   useEffect(() => {
-      handleCep();
+    handleCep();
   }, []);
 
   return (
     <>
-      <Header/>
+      <Header />
       <Container>
         <Form>
           <Input
@@ -66,7 +65,7 @@ export function Vinicius() {
             value={formik.values.cep}
             disabled
           />
-          
+
           <Input
             id="logradouro"
             placeholder={"Logradouro"}
