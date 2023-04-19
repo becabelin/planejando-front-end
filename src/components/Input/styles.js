@@ -9,6 +9,7 @@ export const InputForm = styled.input`
   width: 90%;
   font-family: Poppins;
   opacity: 0.95;
+  color: ${(props) => props.disabled ? Colors.WHITE : Colors.GREY };
   :focus {
     border: 1px solid ${Colors.BLUE};
   }
