@@ -10,10 +10,10 @@ export function Rebeca() {
   const formik = useFormik({
     initialValues: {
       nome: "Rebeca Alves Sousa",
-      idade: "21",
-      cep: "08245510",
+      idade: "19",
+      cep: "60741600",
       logradouro: "",
-      numero: "123",
+      numero: "7842",
       cidade: "",
       bairro: "",
       formacoes: "Sistemas para Internet - FIAP",
